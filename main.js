@@ -11,8 +11,8 @@ let color
 function findCssVal(ele, ...keys) {
   const docStyles = document.documentElement.style
   let winStyles = window.getComputedStyle(ele)
-  for(key of keys) {
-    keyValue = winStyles.getPropertyValue(key)
+  for( const key of keys) {
+    const keyValue = winStyles.getPropertyValue(key)
     docStyles.setProperty(key, keyValue)
     console.log(key, keyValue)
   }
@@ -32,8 +32,8 @@ function setColors(key, val, key2, val2) {
   docStyles.setProperty(key2, val2)
 }
 
-findColors(html, style1, style2)
-setColors(style1, bgColor, style2, color)
+// findColors(html, style1, style2)
+// setColors(style1, bgColor, style2, color)
 
 // event delegation
 pallet.addEventListener('click', e => {
