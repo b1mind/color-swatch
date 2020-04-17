@@ -1,0 +1,87 @@
+:root {
+    --color:rgb(150, 150, 150); 
+    --color2:rgb(169, 169, 169);
+    --random: #000;
+    --randomBg: #fff;
+  }
+  
+  *, *::before, *::after { box-sizing: border-box; }
+  
+  body { margin: 0; }
+  
+  .wrap {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 2em;
+    display: grid;
+    gap: 1rem 0;
+    justify-content: center;
+    background-color: var(--color2);
+    border-radius: 0 0 1rem 1rem;
+  }
+  
+  .box {
+    width: 340px;
+    height: 200px;
+    padding: 1em;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    color: rgba(0, 0, 0, 0.55);
+    font: 800 3em/0.85em sans-serif;
+    text-align: center;
+    background-color: var(--color);
+    border-radius: 1rem;
+    &--other {
+      @extend .box; 
+      background-color: rgba(0, 0, 0, 0.65);
+      color: var(--color);
+    }
+  }
+  
+  .pallet {
+    width: 340px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    button {
+      margin: 0 0.15rem 0.15rem 0;
+      border: 0px solid rgba(255, 255, 255, 0.3);
+      border-radius: 45px;
+      box-shadow: 0 1px 3px 0.5px black;
+      outline: transparent;
+      cursor: pointer;
+      &:focus {
+        border: 2px dotted white;
+        box-shadow: 0 0 2px 1px white; 
+      }
+    }
+  }
+  
+  
+  .red { color: red; background-color: #b22222; }
+  .green { color: limegreen; background-color: #008000; }
+  .blue { color: skyblue; background-color: darkblue; }
+  .purple { color: purple; background-color: #4b0082; }
+  .pink { color: pink; background-color: #ff00ff; }
+  .brown { 
+    color: rgb(73, 23, 26); 
+    background-color: rgb(164, 114, 66); 
+  }
+  .random { 
+    color: var(--random);
+    font: 800 1em sans-serif;
+    background-color: var(--randomBg);
+  }
+  
+  #copy {
+    padding: 1em 1em;
+    color: var(--color2);
+    font-weight: 800;
+    font-size: 1.5em ;
+    text-shadow: 0.5px 1px 1px #000000;
+    background-color: var(--color);
+    border: 1px dotted white;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
