@@ -6,9 +6,24 @@ const style2 = '--color2'
 let bgColor
 let color
 
-function findColors(ele, key, key2) {
-  bgColor = window.getComputedStyle(ele).getPropertyValue(key)
-  color = window.getComputedStyle(ele).getPropertyValue(key2)
+// todo working on
+// ?do I really need a one function solution?
+function findCssVal(ele, ...keys) {
+  const docStyles = document.documentElement.style
+  let winStyles = window.getComputedStyle(ele)
+  for(key of keys) {
+    keyValue = winStyles.getPropertyValue(key)
+    docStyles.setProperty(key, keyValue)
+    console.log(key, keyValue)
+  }
+} 
+
+findCssVal(html, style1, style2)
+
+// this works but maybe needs refractor 
+function findColors(ele, ...keys) {
+  bgColor = window.getComputedStyle(ele).getPropertyValue(keys[0])
+  color = window.getComputedStyle(ele).getPropertyValue(keys[1])
 }
 
 function setColors(key, val, key2, val2) {
@@ -23,8 +38,9 @@ setColors(style1, bgColor, style2, color)
 // event delegation
 pallet.addEventListener('click', e => {
   let btn = e.target.closest('button')
-  //if (!btn) { return } //
+  // if (!btn) { return } //? is this better to use?
   if (btn) { 
+    //findCssVal(btn, 'background-color', 'color')
     findColors(btn, 'background-color', 'color')
     setColors(style1, bgColor, style2, color)
     // drink the cool aid to see Random Colors!
@@ -55,5 +71,4 @@ function copyVars() {
 }
 
 copyBtn.addEventListener('click', copyVars)
-
 

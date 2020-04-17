@@ -6,8 +6,8 @@
   --randomBg: #fff;
   --red:rgb(201, 45, 61);
   --redDark:rgb(213, 198, 136);
-  --blue:rgb(174, 232, 206);
-  --blueDark:rgb(56, 105, 98);
+  --blue:rgb(28, 172, 243);
+  --blueDark:rgb(71, 94, 148);
   --green:rgb(183, 235, 30);
   --greenDark:rgb(64, 52, 115);
   --purple:rgb(185, 134, 233);
@@ -16,6 +16,8 @@
   --pinkDark:rgb(26, 84, 120);
   --brown:rgb(236, 246, 42);
   --brownDark:rgb(171, 127, 72);
+  --brown:rgb(216, 222, 119);
+  --brownDark:rgb(80, 107, 185);
 }
 
 *, *::before, *::after {
