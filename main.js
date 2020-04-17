@@ -1,4 +1,3 @@
-const docStyles = document.documentElement.style
 const pallet = document.querySelector('.pallet')
 const copyBtn = document.getElementById('copy')
 const html = document.getElementsByTagName("html")[0]
@@ -13,6 +12,7 @@ function findColors(ele, key, key2) {
 }
 
 function setColors(key, val, key2, val2) {
+  const docStyles = document.documentElement.style
   docStyles.setProperty(key, val)
   docStyles.setProperty(key2, val2)
 }
@@ -37,7 +37,7 @@ pallet.addEventListener('click', e => {
 })
 
 // clipboard those trippy colors for use else where.
-function copyVars(value) {
+function copyClipBoard(value) {
     let tempInput = document.createElement('TEXTAREA')
     tempInput.value = value
     document.body.appendChild(tempInput)
@@ -46,13 +46,14 @@ function copyVars(value) {
     document.body.removeChild(tempInput)
 }
 
-function copyNow() {
+function copyVars() {
   let stylesList = html.style.cssText
   let copyStyles = stylesList.split(';', 2)
-  copyVars(`  ${copyStyles[0]}; 
- ${copyStyles[1]};`)
+  copyClipBoard(`  ${copyStyles[0]}; 
+ ${copyStyles[1]};
+  --darkOverlay:rgba(0, 0, 0, 0.55);`)
 }
 
-copyBtn.addEventListener('click', copyNow)
+copyBtn.addEventListener('click', copyVars)
 
 

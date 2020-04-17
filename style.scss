@@ -1,8 +1,33 @@
 :root {
-  --color:rgb(150, 150, 150); 
+
+  --color: #c0c0c0; 
   --color2:rgb(169, 169, 169);
+  --darkOverlay:rgba(0, 0, 0, 0.55);
   --random: #000;
   --randomBg: #fff;
+
+  // --red:rgb(233, 10, 43); 
+  // --redDark:rgb(163, 41, 119);
+  --red:rgb(201, 45, 61); 
+  --redDark:rgb(213, 198, 136);
+  // --blue:rgb(119, 173, 249); 
+  // --blueDark:rgb(81, 109, 230);
+  // --blue:rgb(31, 179, 240); 
+  // --blueDark:rgb(63, 127, 183);
+  --blue:rgb(174, 232, 206); 
+  --blueDark:rgb(56, 105, 98);
+  // --green:rgb(138, 227, 116); 
+  // --greenDark:rgb(46, 142, 27);
+  --green:rgb(183, 235, 30); 
+  --greenDark:rgb(64, 52, 115);
+  --purple:rgb(185, 134, 233); 
+  --purpleDark:rgb(110, 39, 123);
+  // --pink:rgb(233, 208, 206); 
+  // --pinkDark:rgb(37, 198, 208);
+  --pink:rgb(230, 123, 204); 
+  --pinkDark:rgb(26, 84, 120);
+  --brown:rgb(185, 190, 105); 
+  --brownDark:rgb(116, 101, 161);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -27,14 +52,14 @@ body { margin: 0; }
   display: grid;
   justify-content: center;
   align-content: center;
-  color: rgba(0, 0, 0, 0.55);
+  color: var(--darkOverlay);
   font: 800 3em/0.85em sans-serif;
   text-align: center;
   background-color: var(--color);
   border-radius: 1rem;
   &--other {
     @extend .box; 
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: var(--darkOverlay);
     color: var(--color);
   }
 }
@@ -60,33 +85,33 @@ body { margin: 0; }
 
 
 .red { 
-  color: red; 
-  background-color: #b22222; 
+  color: var(--redDark); 
+  background-color: var(--red); 
 }
 
 .green { 
-  color: limegreen; 
-  background-color: #008000; 
+  color: var(--greenDark); 
+  background-color: var(--green); 
 }
 
 .blue { 
-  color: skyblue; 
-  background-color: darkblue;
+  color: var(--blueDark); 
+  background-color: var(--blue);
  }
 
 .purple { 
-  color: purple; 
-  background-color: #4b0082; 
+  color: var(--purpleDark); 
+  background-color: var(--purple); 
 }
 
 .pink { 
-  color: pink; 
-  background-color: #ff00ff; 
+  color: var(--pinkDark); 
+  background-color: var(--pink); 
 }
 
 .brown { 
-  color: rgb(73, 23, 26); 
-  background-color: rgb(164, 114, 66); 
+  color: var(--brownDark); 
+  background-color: var(--brown); 
 }
 
 .random { 
@@ -97,12 +122,14 @@ body { margin: 0; }
 
 #copy {
   padding: 1em 1em;
-  color: var(--color2);
+  color: var(--color);
   font-weight: 800;
   font-size: 1.5em ;
+  background: transparent;
   text-shadow: 0.5px 1px 1px #000000;
-  background-color: var(--color);
-  border: 1px dotted white;
+  border: 3px solid;
+  border-color: var(--color);
   border-radius: 1rem;
+  outline: transparent;
   cursor: pointer;
 }
