@@ -2,33 +2,36 @@ const docStyles = document.documentElement.style
 const pallet = document.querySelector('.pallet')
 const copyBtn = document.getElementById('copy')
 const html = document.getElementsByTagName("html")[0]
+const style1 = '--color'
+const style2 = '--color2'
+let bgColor
+let color
 
-function setColors(ele, x, y) {
-  let bgColor = window.getComputedStyle(html).getPropertyValue('--color')
-  let color = window.getComputedStyle(html).getPropertyValue('--color2')
-  docStyles.setProperty('--color', bgColor)
-  docStyles.setProperty('--color2', color)
+function findColors(ele, key, key2) {
+  bgColor = window.getComputedStyle(ele).getPropertyValue(key)
+  color = window.getComputedStyle(ele).getPropertyValue(key2)
 }
-let bgColor = window.getComputedStyle(html).getPropertyValue('--color')
-let color = window.getComputedStyle(html).getPropertyValue('--color2')
-docStyles.setProperty('--color', bgColor)
-docStyles.setProperty('--color2', color)
+
+function setColors(key, val, key2, val2) {
+  docStyles.setProperty(key, val)
+  docStyles.setProperty(key2, val2)
+}
+
+findColors(html, style1, style2)
+setColors(style1, bgColor, style2, color)
 
 // event delegation
 pallet.addEventListener('click', e => {
   let btn = e.target.closest('button')
   //if (!btn) { return } //
   if (btn) { 
-    bgColor = window.getComputedStyle(btn).getPropertyValue('background-color')
-    color = window.getComputedStyle(btn).getPropertyValue('color')
-    docStyles.setProperty('--color', bgColor)
-    docStyles.setProperty('--color2', color)
-    // drink the coolaid to see Random Colors!
+    findColors(btn, 'background-color', 'color')
+    setColors(style1, bgColor, style2, color)
+    // drink the cool aid to see Random Colors!
     if (btn.classList[0] === 'random') {
       let random = Math.floor(Math.random()*16777215).toString(16)
       let randomBg = Math.floor(Math.random()*16777215).toString(16)
-      docStyles.setProperty('--random', `#${random}`)
-      docStyles.setProperty('--randomBg', `#${randomBg}`)
+      setColors('--randomBg', `#${randomBg}`, '--random', `#${random}`)
     } 
   } 
 })
