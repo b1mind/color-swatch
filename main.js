@@ -32,9 +32,9 @@ pallet.addEventListener('click', e => {
     findSetColors(btn, 'background-color', 'color')
     // drink the cool aid to see Random Colors!
     if (btn.classList[0] === 'random') {
+      const randomStyles = ['--randomBg', '--random']
       let random = Math.floor(Math.random()*16777215).toString(16)
       let randomBg = Math.floor(Math.random()*16777215).toString(16)
-      let randomStyles = ['--randomBg', '--random']
       setColors(randomStyles, `#${randomBg}`, `#${random}`)
     } 
   } 
