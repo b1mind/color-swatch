@@ -1,12 +1,3 @@
-Make a List:
-  ^ start your list with value + ` : `
-  *Keep the below for examples on how to format till you get good at it*
-  *bold* _italic_ ~strikeThrough~ `code` tags:@tag @critical @high @low @today
-  You can provide time estimates for your todo's with > @1h30m
-  You can even use natural time language with > @est(1 day and 20 minutes)
-  KeyBinds are the best! **NOTE need to rebind for Archive Done Todo's!
-  Box=`alt+enter` Done=`alt+D` Start=`alt+S ` Cancel=`alt+C`
-
-Test:
-  ☐ this is atest
-  ☐ make some todo's
+Refactor:
+  ☐ make function that take args for both find and set key:value vars
+  ☐ Look into classes
