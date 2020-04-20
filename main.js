@@ -1,45 +1,41 @@
 const pallet = document.querySelector('.pallet')
 const copyBtn = document.getElementById('copy')
 const html = document.getElementsByTagName("html")[0]
-const style1 = '--color'
-const style2 = '--color2'
-const styles = [style1, style2]
-let bgColor
-let color
 
-// todo refactoring find/set colors
-// ?do I really need a one function solution?
+// todo revaluate new functions.
+function setColors(keys, ...keyValues) {
+  const docStyles = document.documentElement.style
+  let result = {}
+  keys.forEach((key, i) => {
+    result[key] = keyValues[i]
+  })
+  for (const [style, value] of Object.entries(result)){
+    docStyles.setProperty(style, value)
+  }
+}
 
-function findCssVal(ele, ...keys) {
+function findSetColors(ele, ...keys) {
+  const styles = ['--color', '--color2']
   const winStyles = window.getComputedStyle(ele)
   const keyValues = []
   for( const key of keys) {
     let keyValue = winStyles.getPropertyValue(key)
     keyValues.push(keyValue)
-    //console.log(keyValues);
   }
   setColors(styles, ...keyValues)
-}
-
-//this works but maybe needs refractor 
-function setColors(keys, ...keyValues) {
-  const docStyles = document.documentElement.style
-  docStyles.setProperty(keys[0], keyValues[0])
-  docStyles.setProperty(keys[1], keyValues[1])
 }
 
 // event delegation
 pallet.addEventListener('click', e => {
   let btn = e.target.closest('button')
-  // if (!btn) { return } //? is this better to use?
   if (btn) {   
-    findCssVal(btn, 'background-color', 'color')
+    findSetColors(btn, 'background-color', 'color')
     // drink the cool aid to see Random Colors!
     if (btn.classList[0] === 'random') {
       let random = Math.floor(Math.random()*16777215).toString(16)
       let randomBg = Math.floor(Math.random()*16777215).toString(16)
-      let randomStyle = ['--randomBg', '--random']
-      setColors(randomStyle, `#${randomBg}`, `#${random}`)
+      let randomStyles = ['--randomBg', '--random']
+      setColors(randomStyles, `#${randomBg}`, `#${random}`)
     } 
   } 
 })
