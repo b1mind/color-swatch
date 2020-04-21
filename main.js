@@ -6,12 +6,11 @@ const html = document.getElementsByTagName("html")[0]
 function setColors(keys, ...keyValues) {
   const docStyles = document.documentElement.style
   let result = {}
-  keys.forEach((key, i) => {
-    result[key] = keyValues[i]
-  })
+  keys.forEach((key, i) => { result[key] = keyValues[i] })
   for (const [style, value] of Object.entries(result)){
     docStyles.setProperty(style, value)
   }
+  console.log(result);
 }
 
 function findSetColors(ele, ...keys) {
@@ -35,7 +34,7 @@ pallet.addEventListener('click', e => {
       const randomStyles = ['--randomBg', '--random']
       let random = Math.floor(Math.random()*16777215).toString(16)
       let randomBg = Math.floor(Math.random()*16777215).toString(16)
-      setColors(randomStyles, `#${randomBg}`, `#${random}`)
+      setColors(randomStyles, `#${randomBg}`,`#${random}`)
     } 
   } 
 })
@@ -53,7 +52,7 @@ function copyClipBoard(value) {
 function copyVars() {
   let stylesList = html.style.cssText
   let copyStyles = stylesList.split(';', 2)
-  copyClipBoard(`  ${copyStyles[0]}; 
+  copyClipBoard(`  ${copyStyles[0]};
  ${copyStyles[1]};
   --darkOverlay:rgba(0, 0, 0, 0.55);`)
 }
