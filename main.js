@@ -2,13 +2,11 @@ const pallet = document.querySelector('.pallet')
 const copyBtn = document.getElementById('copy')
 const html = document.getElementsByTagName("html")[0]
 
-// todo revaluate new functions.
+// todo re-evaluate 
 function setColors(keys, ...keyValues) {
   const docStyles = document.documentElement.style
   let result = {}
-  keys.forEach((key, i) => {
-    result[key] = keyValues[i]
-  })
+  keys.forEach((key, i) => { result[key] = keyValues[i] })
   for (const [style, value] of Object.entries(result)){
     docStyles.setProperty(style, value)
   }
