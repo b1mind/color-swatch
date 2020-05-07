@@ -1,144 +1,146 @@
 :root {
+	--color: #c0c0c0;
+	--color2: rgb(169, 169, 169);
+	--darkOverlay: rgba(0, 0, 0, 0.55);
+	--random: #000;
+	--randomBg: #fff;
 
-  --color: #c0c0c0; 
-  --color2:rgb(169, 169, 169);
-  --darkOverlay:rgba(0, 0, 0, 0.55);
-  --random: #000;
-  --randomBg: #fff;
-
-  // --red:rgb(233, 10, 43); 
-  // --redDark:rgb(163, 41, 119);
-  --red:rgb(201, 45, 61); 
-  --redDark:rgb(213, 198, 136);
-  // --blue:rgb(119, 173, 249); 
-  // --blueDark:rgb(81, 109, 230);
-  // --blue:rgb(31, 179, 240); 
-  // --blueDark:rgb(63, 127, 183);
-  --blue:rgb(28, 172, 243); 
-  --blueDark:rgb(71, 94, 148);
-  // --green:rgb(174, 232, 206); 
-  // --greenDark:rgb(56, 105, 98);
-  // --green:rgb(138, 227, 116); 
-  // --greenDark:rgb(46, 142, 27);
-  --green:rgb(183, 235, 30); 
-  --greenDark:rgb(64, 52, 115);
-  --purple:rgb(185, 134, 233); 
-  --purpleDark:rgb(110, 39, 123);
-  // --pink:rgb(233, 208, 206); 
-  // --pinkDark:rgb(37, 198, 208);
-  --pink:rgb(230, 123, 204); 
-  --pinkDark:rgb(26, 84, 120);
-  // --brown:rgb(185, 190, 105); 
-  // --brownDark:rgb(116, 101, 161);
-  --brown:rgb(236, 246, 42); 
-  --brownDark:rgb(171, 127, 72);
-  --brown:rgb(216, 222, 119); 
-  --brownDark:rgb(80, 107, 185);
+	// --red:rgb(233, 10, 43);
+	// --redDark:rgb(163, 41, 119);
+	--red: rgb(201, 45, 61);
+	--redDark: rgb(213, 198, 136);
+	// --blue:rgb(119, 173, 249);
+	// --blueDark:rgb(81, 109, 230);
+	// --blue:rgb(31, 179, 240);
+	// --blueDark:rgb(63, 127, 183);
+	--blue: rgb(28, 172, 243);
+	--blueDark: rgb(71, 94, 148);
+	// --green:rgb(174, 232, 206);
+	// --greenDark:rgb(56, 105, 98);
+	// --green:rgb(138, 227, 116);
+	// --greenDark:rgb(46, 142, 27);
+	--green: rgb(183, 235, 30);
+	--greenDark: rgb(64, 52, 115);
+	--purple: rgb(185, 134, 233);
+	--purpleDark: rgb(110, 39, 123);
+	// --pink:rgb(233, 208, 206);
+	// --pinkDark:rgb(37, 198, 208);
+	--pink: rgb(230, 123, 204);
+	--pinkDark: rgb(26, 84, 120);
+	// --brown:rgb(185, 190, 105);
+	// --brownDark:rgb(116, 101, 161);
+	--brown: rgb(236, 246, 42);
+	--brownDark: rgb(171, 127, 72);
+	--brown: rgb(216, 222, 119);
+	--brownDark: rgb(80, 107, 185);
 }
 
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
 
-body { 
-  margin: 0; 
-  background: #f5f5f5;
+body {
+	margin: 0;
+	background: #f5f5f5;
 }
 
 .wrap {
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 2em;
-  display: grid;
-  gap: 1rem 0;
-  justify-content: center;
-  background-color: var(--color2);
-  border-radius: 0 0 1rem 1rem;
+	max-width: 420px;
+	margin: 0 auto;
+	padding: 2em;
+	display: grid;
+	gap: 1rem 0;
+	justify-content: center;
+	background-color: var(--color2);
+	border-radius: 0 0 1rem 1rem;
 }
 
 .box {
-  width: 340px;
-  height: 200px;
-  padding: 1em;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  color: var(--darkOverlay);
-  font: 800 3em/0.85em sans-serif;
-  text-align: center;
-  background-color: var(--color);
-  border-radius: 1rem;
-  &--other {
-    @extend .box; 
-    background-color: var(--darkOverlay);
-    color: var(--color);
-  }
+	width: 340px;
+	height: 200px;
+	padding: 1em;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	color: var(--darkOverlay);
+	font: 800 3em/0.85em sans-serif;
+	text-align: center;
+	background-color: var(--color);
+	border-radius: 1rem;
+	&--other {
+		@extend .box;
+		background-color: var(--darkOverlay);
+		color: var(--color);
+	}
 }
 
 .pallet {
-  width: 340px;
-  height: 50px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
-  button {
-    margin: 0 0.15rem 0.15rem 0;
-    border: 0px solid rgba(255, 255, 255, 0.3);
-    border-radius: 45px;
-    box-shadow: 0 1px 3px 0.5px black;
-    outline: transparent;
-    cursor: pointer;
-    &:focus {
-      border: 2px dotted white;
-      box-shadow: 0 0 2px 1px white; 
-    }
-  }
+	height: 35px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+	gap: 2px;
+	button {
+		margin: 0 0.15rem 0.15rem 0;
+		border: 0px solid transparent;
+		border-radius: 0.55rem;
+		box-shadow: 0 0px 1px 0.5px rgba(0, 0, 0, 0.5);
+		outline: transparent;
+		cursor: pointer;
+		&:focus {
+			border: 2px dotted white;
+			box-shadow: 0 0 1px 0.5px white;
+		}
+	}
 }
 
-
-.red { 
-  color: var(--redDark); 
-  background-color: var(--red); 
+.red {
+	color: var(--redDark);
+	background-color: var(--red);
 }
 
-.green { 
-  color: var(--greenDark); 
-  background-color: var(--green); 
+.green {
+	color: var(--greenDark);
+	background-color: var(--green);
 }
 
-.blue { 
-  color: var(--blueDark); 
-  background-color: var(--blue);
- }
-
-.purple { 
-  color: var(--purpleDark); 
-  background-color: var(--purple); 
+.blue {
+	color: var(--blueDark);
+	background-color: var(--blue);
 }
 
-.pink { 
-  color: var(--pinkDark); 
-  background-color: var(--pink); 
+.purple {
+	color: var(--purpleDark);
+	background-color: var(--purple);
 }
 
-.brown { 
-  color: var(--brownDark); 
-  background-color: var(--brown); 
+.pink {
+	color: var(--pinkDark);
+	background-color: var(--pink);
 }
 
-.random { 
-  color: var(--random);
-  font: 800 1em sans-serif;
-  background-color: var(--randomBg);
+.brown {
+	color: var(--brownDark);
+	background-color: var(--brown);
+}
+
+.random {
+	color: var(--random);
+	font: 800 1em sans-serif;
+	background-color: var(--randomBg);
 }
 
 #copy {
-  padding: 1em 1em;
-  color: var(--color);
-  font-weight: 800;
-  font-size: 1.5em ;
-  background: transparent;
-  text-shadow: 0.5px 1px 1px #000000;
-  border: 3px solid;
-  border-color: var(--color);
-  border-radius: 1rem;
-  outline: transparent;
-  cursor: pointer;
+	padding: 1em 1em;
+	color: var(--color);
+	font-weight: 800;
+	font-size: 1.5em;
+	background: transparent;
+	text-shadow: 0.5px 1px 1px #000000;
+	border: 3px solid;
+	border-color: var(--color);
+	border-radius: 1rem;
+	outline: transparent;
+	cursor: pointer;
 }

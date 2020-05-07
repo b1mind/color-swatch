@@ -1,26 +1,28 @@
 :root {
   --color: #c0c0c0;
-  --color2:rgb(169, 169, 169);
-  --darkOverlay:rgba(0, 0, 0, 0.55);
+  --color2: rgb(169, 169, 169);
+  --darkOverlay: rgba(0, 0, 0, 0.55);
   --random: #000;
   --randomBg: #fff;
-  --red:rgb(201, 45, 61);
-  --redDark:rgb(213, 198, 136);
-  --blue:rgb(28, 172, 243);
-  --blueDark:rgb(71, 94, 148);
-  --green:rgb(183, 235, 30);
-  --greenDark:rgb(64, 52, 115);
-  --purple:rgb(185, 134, 233);
-  --purpleDark:rgb(110, 39, 123);
-  --pink:rgb(230, 123, 204);
-  --pinkDark:rgb(26, 84, 120);
-  --brown:rgb(236, 246, 42);
-  --brownDark:rgb(171, 127, 72);
-  --brown:rgb(216, 222, 119);
-  --brownDark:rgb(80, 107, 185);
+  --red: rgb(201, 45, 61);
+  --redDark: rgb(213, 198, 136);
+  --blue: rgb(28, 172, 243);
+  --blueDark: rgb(71, 94, 148);
+  --green: rgb(183, 235, 30);
+  --greenDark: rgb(64, 52, 115);
+  --purple: rgb(185, 134, 233);
+  --purpleDark: rgb(110, 39, 123);
+  --pink: rgb(230, 123, 204);
+  --pinkDark: rgb(26, 84, 120);
+  --brown: rgb(236, 246, 42);
+  --brownDark: rgb(171, 127, 72);
+  --brown: rgb(216, 222, 119);
+  --brownDark: rgb(80, 107, 185);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -68,28 +70,28 @@ body {
 }
 
 .pallet {
-  width: 340px;
-  height: 50px;
+  height: 35px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(45px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+  gap: 2px;
 }
 
 .pallet button {
   margin: 0 0.15rem 0.15rem 0;
-  border: 0px solid rgba(255, 255, 255, 0.3);
-  border-radius: 45px;
-  -webkit-box-shadow: 0 1px 3px 0.5px black;
-          box-shadow: 0 1px 3px 0.5px black;
+  border: 0px solid transparent;
+  border-radius: 0.55rem;
+  -webkit-box-shadow: 0 0px 1px 0.5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0px 1px 0.5px rgba(0, 0, 0, 0.5);
   outline: transparent;
   cursor: pointer;
 }
 
 .pallet button:focus {
   border: 2px dotted white;
-  -webkit-box-shadow: 0 0 2px 1px white;
-          box-shadow: 0 0 2px 1px white;
+  -webkit-box-shadow: 0 0 1px 0.5px white;
+          box-shadow: 0 0 1px 0.5px white;
 }
 
 .red {
